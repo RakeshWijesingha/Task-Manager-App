@@ -17,9 +17,9 @@ function TaskForm({ addTask }) {
         type="text"
         value={taskText}
         onChange={(e) => setTaskText(e.target.value)}
-        placeholder="Add a New Task"
+        placeholder="නව ටාස්ක් එකක් ඇතුළු කරන්න"
       />
-      <button type="submit">Add Task</button>
+      <button type="submit">ටාස්ක් එකතු කරන්න</button>
     </form>
   );
 }
