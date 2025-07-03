@@ -1,0 +1,68 @@
+.App {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-item span {
+  flex: 1;
+}
+
+.task-item button {
+  background-color: #dc3545;
+}
+
+.task-item button:first-of-type {
+  background-color: #ffc107;
+}
+
+.task-item button:hover {
+  opacity: 0.8;
+}
+
+.App > div {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.App > div button {
+  background-color: #6c757d;
+}
+
+.App > div button:hover {
+  background-color: #5a6268;
+}
