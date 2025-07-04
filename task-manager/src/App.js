@@ -19,14 +19,15 @@ function App() {
   }, [tasks]);
 
   // Add a new task
-  const addTask = (text) => {
-    const newTask = {
-      id: Date.now(),
-      text,
-      completed: false,
-    };
-    setTasks([...tasks, newTask]);
+  const addTask = (text, category = 'පොදු') => {
+  const newTask = {
+    id: Date.now(),
+    text,
+    completed: false,
+    category,
   };
+  setTasks([...tasks, newTask]);
+};
 
   // Toggle task completion
   const toggleComplete = (id) => {
@@ -62,13 +63,30 @@ function App() {
   });
 
   return (
-    <div className="App">
-      <h1>Task Manager</h1>
+    <div className="max-w-2xl mx-auto p-6 bg-gray-50 min-h-screen">
+      <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
+        Task Manager
+      </h1>
       <TaskForm addTask={addTask} />
-      <div>
-        <button onClick={() => setFilter('all')}>All</button>
-        <button onClick={() => setFilter('completed')}>Completed</button>
-        <button onClick={() => setFilter('pending')}>Pending</button>
+      <div className="flex gap-3 mb-6 flex-wrap">
+        <button
+          onClick={() => setFilter('all')}
+          className="px-4 py-2 text-sm font-medium text-white bg-gray-500 rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 transition duration-200"
+        >
+          All
+        </button>
+        <button
+          onClick={() => setFilter('completed')}
+          className="px-4 py-2 text-sm font-medium text-white bg-gray-500 rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 transition duration-200"
+        >
+          Completed
+        </button>
+        <button
+          onClick={() => setFilter('pending')}
+          className="px-4 py-2 text-sm font-medium text-white bg-gray-500 rounded-lg hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 transition duration-200"
+        >
+          Pending
+        </button>
       </div>
       <TaskList
         tasks={filteredTasks}

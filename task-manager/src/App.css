@@ -1,68 +1,27 @@
-.App {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Strikethrough for completed tasks */
+.task-item.completed span {
+  @apply line-through text-gray-500;
 }
 
-form {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  form {
+    @apply flex-col;
+  }
 
-input {
-  flex: 1;
-  padding: 8px;
-  font-size: 16px;
-}
+  input {
+    @apply w-full mb-2;
+  }
 
-button {
-  padding: 8px 16px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
+  button {
+    @apply w-full;
+  }
 
-button:hover {
-  background-color: #0056b3;
-}
-
-.task-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.task-item span {
-  flex: 1;
-}
-
-.task-item button {
-  background-color: #dc3545;
-}
-
-.task-item button:first-of-type {
-  background-color: #ffc107;
-}
-
-.task-item button:hover {
-  opacity: 0.8;
-}
-
-.App > div {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.App > div button {
-  background-color: #6c757d;
-}
-
-.App > div button:hover {
-  background-color: #5a6268;
+  .flex-wrap button {
+    @apply w-full;
+  }
 }
