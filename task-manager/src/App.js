@@ -19,7 +19,7 @@ function App() {
   }, [tasks]);
 
   // Add a new task
-  const addTask = (text, category = 'පොදු') => {
+  const addTask = (text, category = 'General') => {
   const newTask = {
     id: Date.now(),
     text,
